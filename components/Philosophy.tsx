@@ -45,7 +45,7 @@ export default function Philosophy() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
             className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-[#F5F0E8] leading-[1.05]"
             style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
           >
@@ -66,7 +66,7 @@ export default function Philosophy() {
               transition={{
                 duration: 0.7,
                 delay: i * 0.15,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
               }}
               className="group"
             >

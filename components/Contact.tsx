@@ -30,7 +30,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
             <div className="flex items-center gap-3 mb-8">
               <span className="block w-8 h-px bg-[#C8903A]" />
@@ -101,7 +101,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
             {submitted ? (
               <div className="h-full flex flex-col items-start justify-center py-20">
