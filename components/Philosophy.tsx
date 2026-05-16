@@ -1,29 +1,46 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const pillars = [
   {
     number: "01",
     title: "Handpicked Properties",
     body: "Every hotel, lodge, and camp in our network is chosen personally. No algorithms. No commissions driving the choice.",
+    image: "https://aurigaventure.com/wp-content/uploads/2026/01/Glamping-at-Deosai-scaled-e1771302772481.jpg",
   },
   {
     number: "02",
     title: "Fully Tailored",
     body: "We start with a blank page for every client. Your itinerary is built around your pace, your interests, and the experiences only you'll have.",
+    image: "https://aurigaventure.com/wp-content/uploads/2026/01/DSC_3514-HDR-1024x683.jpg",
   },
   {
     number: "03",
     title: "Seamless from Start to End",
     body: "Transfers, permits, guides, meals — every detail is handled before you land. You travel. We handle the rest.",
+    image: "https://aurigaventure.com/wp-content/uploads/2014/10/DJI_0122-scaled.jpg",
   },
 ];
 
 export default function Philosophy() {
   return (
-    <section id="philosophy" className="bg-[#0C0C0C] py-32 lg:py-44">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section id="philosophy" className="relative bg-[#0C0C0C] py-32 lg:py-44 overflow-hidden">
+      {/* Atmospheric full-bleed background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="https://aurigaventure.com/wp-content/uploads/2026/01/Nanga-Parbat-and-Sheosar-Lake-scaled.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-[0.07]"
+          unoptimized
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-[#0C0C0C]/60" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="mb-20 lg:mb-28 max-w-3xl">
           <motion.div
@@ -55,7 +72,7 @@ export default function Philosophy() {
           </motion.h2>
         </div>
 
-        {/* Pillars */}
+        {/* Pillars — each with a photo thumbnail */}
         <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
           {pillars.map((pillar, i) => (
             <motion.div
@@ -70,15 +87,28 @@ export default function Philosophy() {
               }}
               className="group"
             >
-              <div className="border-t border-[#222222] pt-8 pb-10 h-full">
+              {/* Photo thumbnail */}
+              <div className="relative overflow-hidden mb-6" style={{ aspectRatio: "16/9" }}>
+                <Image
+                  src={pillar.image}
+                  alt={pillar.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  unoptimized
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-[#0C0C0C]/40 group-hover:bg-[#0C0C0C]/20 transition-colors duration-500" />
                 <span
-                  className="font-cormorant text-5xl text-[#C8903A]/20 font-light block mb-6"
+                  className="absolute top-3 left-3 font-cormorant text-3xl text-[#C8903A]/50 font-light"
                   style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
                 >
                   {pillar.number}
                 </span>
+              </div>
+
+              <div className="border-t border-[#222222] pt-6 pb-10">
                 <h3
-                  className="font-cormorant text-2xl text-[#F5F0E8] font-light mb-5 leading-snug"
+                  className="font-cormorant text-2xl text-[#F5F0E8] font-light mb-4 leading-snug group-hover:text-[#C8903A] transition-colors duration-300"
                   style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
                 >
                   {pillar.title}
@@ -105,7 +135,7 @@ export default function Philosophy() {
           {["Unique.", "Different.", "Daring."].map((word) => (
             <span
               key={word}
-              className="font-cormorant text-3xl text-[#F5F0E8]/20 font-light"
+              className="font-cormorant text-3xl text-[#F5F0E8]/20 font-light hover:text-[#C8903A]/40 transition-colors duration-300 cursor-default"
               style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
             >
               {word}

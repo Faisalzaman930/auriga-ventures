@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import GalleryStrip from "@/components/GalleryStrip";
 import About from "@/components/About";
 import Destinations from "@/components/Destinations";
 import Philosophy from "@/components/Philosophy";
@@ -12,6 +13,7 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
+      <GalleryStrip />
       <About />
       <Destinations />
       <Philosophy />
