@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -33,13 +34,26 @@ export default function About() {
               </span>
             </div>
             <h2
-              className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-[#F5F0E8] leading-[1.05]"
+              className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-[#F5F0E8] leading-[1.05] mb-10"
               style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
             >
               We Don&apos;t Sell Tours.
               <br />
               <em className="not-italic text-[#C8903A]">We Build Journeys.</em>
             </h2>
+
+            {/* Photo */}
+            <div className="relative overflow-hidden">
+              <Image
+                src="https://aurigaventure.com/wp-content/uploads/2014/10/DJI_0122-scaled.jpg"
+                alt="Aerial view of Gilgit-Baltistan"
+                width={700}
+                height={460}
+                className="w-full object-cover"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0C]/60 to-transparent" />
+            </div>
           </motion.div>
 
           {/* Right: body */}
@@ -49,6 +63,19 @@ export default function About() {
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
           >
+            {/* Secondary photo */}
+            <div className="relative overflow-hidden mb-10">
+              <Image
+                src="https://aurigaventure.com/wp-content/uploads/2026/01/IMG_6385-768x1024.jpeg"
+                alt="Mountain landscape Pakistan"
+                width={560}
+                height={740}
+                className="w-full object-cover"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0C]/40 to-transparent" />
+            </div>
+
             <p
               className="text-[#F5F0E8]/60 text-lg leading-relaxed mb-12"
               style={{ fontFamily: "var(--font-inter), sans-serif" }}
@@ -62,8 +89,8 @@ export default function About() {
               className="font-cormorant text-xl text-[#F5F0E8]/40 italic border-l-2 border-[#C8903A]/40 pl-6"
               style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
             >
-              "Travel, at its highest form, is more than movement — it is
-              emotion in motion."
+              &ldquo;Travel, at its highest form, is more than movement — it is
+              emotion in motion.&rdquo;
             </blockquote>
           </motion.div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -25,8 +26,20 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#080808] py-32 lg:py-44">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section className="relative bg-[#080808] py-32 lg:py-44 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://aurigaventure.com/wp-content/uploads/2026/01/DSC_3514-HDR-1024x683.jpg"
+          alt="Pakistan landscape"
+          fill
+          className="object-cover opacity-10"
+          unoptimized
+        />
+        <div className="absolute inset-0 bg-[#080808]/80" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="mb-16 lg:mb-20">
           <motion.div
@@ -71,7 +84,7 @@ export default function Testimonials() {
                 delay: i * 0.12,
                 ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
               }}
-              className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-start bg-[#0F0F0F] border border-[#1E1E1E] p-8 lg:p-10 flex flex-col justify-between"
+              className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-start bg-[#0F0F0F]/80 backdrop-blur-sm border border-[#1E1E1E] p-8 lg:p-10 flex flex-col justify-between"
             >
               {/* Gold quote mark */}
               <div>

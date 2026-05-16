@@ -14,8 +14,20 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#080808]">
-      {/* Background gradient layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F0A05] via-[#080808] to-[#050810] pointer-events-none" />
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        poster="https://aurigaventure.com/wp-content/uploads/2026/01/DSC_3514-HDR-1024x683.jpg"
+      >
+        <source src="https://aurigaventure.com/wp-content/uploads/2014/10/Gilgit-Baltistan-copy-2.mov" type="video/mp4" />
+      </video>
+
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#080808]/80 via-[#080808]/60 to-[#080808]/80 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(200,144,58,0.08),transparent)] pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C8903A]/20 to-transparent" />
 
@@ -106,7 +118,7 @@ export default function Hero() {
             className="font-cormorant text-lg text-[#F5F0E8]/30 italic"
             style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
           >
-            "Beyond Travel. We Curate Dreams."
+            &ldquo;Beyond Travel. We Curate Dreams.&rdquo;
           </p>
         </motion.div>
       </div>
