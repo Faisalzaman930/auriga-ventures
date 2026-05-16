@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Auriga Ventures — Content Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    font-size: 10.5pt;
+    line-height: 1.7;
+  }
+
+  /* Cover page */
+  .cover {
+    background: #080808;
+    color: #F5F0E8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 72px;
+    page-break-after: always;
+    position: relative;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(200,144,58,0.12), transparent);
+  }
+  .cover-inner { position: relative; }
+  .cover-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #C8903A;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .cover-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: #C8903A;
+  }
+  .cover h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: 64pt;
+    line-height: 0.95;
+    color: #F5F0E8;
+    margin-bottom: 24px;
+  }
+  .cover h1 em {
+    font-style: normal;
+    color: #C8903A;
+  }
+  .cover-sub {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 16pt;
+    font-weight: 300;
+    color: rgba(245,240,232,0.5);
+    font-style: italic;
+    margin-bottom: 64px;
+  }
+  .cover-meta {
+    border-top: 1px solid rgba(245,240,232,0.12);
+    padding-top: 28px;
+    display: flex;
+    gap: 48px;
+  }
+  .cover-meta-item label {
+    display: block;
+    font-size: 7pt;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+    margin-bottom: 4px;
+  }
+  .cover-meta-item span {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13pt;
+    color: rgba(245,240,232,0.7);
+  }
+  .cover-corner-tl {
+    position: absolute;
+    top: 40px; left: 40px;
+    width: 48px; height: 48px;
+    border-left: 1px solid rgba(200,144,58,0.3);
+    border-top: 1px solid rgba(200,144,58,0.3);
+  }
+  .cover-corner-br {
+    position: absolute;
+    bottom: 40px; right: 40px;
+    width: 48px; height: 48px;
+    border-right: 1px solid rgba(200,144,58,0.3);
+    border-bottom: 1px solid rgba(200,144,58,0.3);
+  }
+
+  /* Content pages */
+  .content {
+    padding: 56px 64px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Section headers */
+  .section-label {
+    font-size: 7.5pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #C8903A;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #C8903A;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: 28pt;
+    line-height: 1.1;
+    color: #080808;
+    margin-bottom: 8px;
+  }
+  h2 em { font-style: normal; color: #C8903A; }
+
+  h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 16pt;
+    color: #080808;
+    margin-top: 36px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e8e4dc;
+  }
+
+  p {
+    color: #3a3a3a;
+    margin-bottom: 14px;
+    font-size: 10pt;
+  }
+
+  .strategy-box {
+    background: #080808;
+    color: #F5F0E8;
+    padding: 28px 32px;
+    margin: 28px 0 36px;
+    position: relative;
+  }
+  .strategy-box::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: #C8903A;
+  }
+  .strategy-box p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 15pt;
+    font-weight: 300;
+    font-style: italic;
+    color: #F5F0E8;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .strategy-box strong { color: #C8903A; font-style: normal; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 9pt;
+  }
+  thead tr {
+    background: #080808;
+    color: #F5F0E8;
+  }
+  thead th {
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  tbody tr:nth-child(even) { background: #f9f7f4; }
+  tbody tr:hover { background: #f3ede3; }
+  tbody td {
+    padding: 9px 12px;
+    color: #2a2a2a;
+    border-bottom: 1px solid #ede8e0;
+    vertical-align: top;
+  }
+  tbody td:first-child { font-weight: 500; color: #080808; }
+  .vol { color: #C8903A; font-weight: 600; }
+  .kd-low { color: #2a7a2a; font-weight: 600; }
+  .kd-mid { color: #8a6200; font-weight: 600; }
+  .kd-high { color: #8a2020; font-weight: 600; }
+  .star { color: #C8903A; }
+
+  /* Priority badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-1 { background: #C8903A; color: #fff; }
+  .badge-2 { background: #d4a855; color: #080808; }
+  .badge-3 { background: #e8e4dc; color: #4a4a4a; }
+  .badge-4 { background: #f0ece4; color: #6a6a6a; }
+  .badge-5 { background: #f7f5f0; color: #8a8a8a; border: 1px solid #e0dbd0; }
+
+  /* Calendar grid */
+  .calendar {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 0;
+    margin: 16px 0 32px;
+    border: 1px solid #e8e4dc;
+  }
+  .cal-header {
+    background: #080808;
+    color: #F5F0E8;
+    padding: 8px 14px;
+    font-size: 7.5pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .cal-row {
+    display: contents;
+  }
+  .cal-cell {
+    padding: 9px 14px;
+    border-bottom: 1px solid #e8e4dc;
+    font-size: 9pt;
+    color: #2a2a2a;
+    display: flex;
+    align-items: center;
+  }
+  .cal-cell:nth-child(3n+1) {
+    background: #f9f7f4;
+    font-weight: 600;
+    color: #C8903A;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12pt;
+    justify-content: center;
+  }
+
+  /* Quick wins */
+  .quick-win {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e8e4dc;
+  }
+  .quick-win:last-child { border-bottom: none; }
+  .qw-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24pt;
+    color: rgba(200,144,58,0.25);
+    font-weight: 300;
+    line-height: 1;
+    min-width: 36px;
+  }
+  .qw-title { font-weight: 600; color: #080808; margin-bottom: 3px; font-size: 10.5pt; }
+  .qw-desc { font-size: 9pt; color: #5a5a5a; }
+
+  /* Funnel */
+  .funnel {
+    background: #f9f7f4;
+    border-left: 3px solid #C8903A;
+    padding: 24px 28px;
+    margin: 20px 0 32px;
+  }
+  .funnel-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+  .funnel-step:last-child { margin-bottom: 0; }
+  .funnel-arrow {
+    color: #C8903A;
+    font-size: 14pt;
+    margin-left: 8px;
+  }
+  .funnel-step-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13pt;
+    color: #080808;
+  }
+  .funnel-step-sub { font-size: 8.5pt; color: #6a6a6a; }
+
+  /* Voice rules */
+  .rule {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e4dc;
+  }
+  .rule-icon { font-size: 13pt; min-width: 22px; }
+  .rule-text { font-size: 9.5pt; color: #3a3a3a; }
+  .rule-text strong { color: #080808; }
+
+  /* Section dividers */
+  .section-break {
+    margin: 48px 0 40px;
+    border: none;
+    border-top: 1px solid #e8e4dc;
+  }
+
+  .page-break { page-break-before: always; }
+
+  /* Footer */
+  @page {
+    margin: 0;
+    size: A4;
+  }
+  @page :not(:first) {
+    @bottom-center {
+      content: counter(page);
+      font-family: 'Inter', sans-serif;
+      font-size: 8pt;
+      color: #aaa;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-corner-tl"></div>
+  <div class="cover-corner-br"></div>
+  <div class="cover-inner">
+    <div class="cover-label">Auriga Ventures</div>
+    <h1>Content<br /><em>Plan</em></h1>
+    <p class="cover-sub">From keyword intelligence to bookings.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>Based On</label>
+        <span>862 Keywords · Competitor Analysis</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Generated</label>
+        <span>May 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Purpose</label>
+        <span>SEO + Conversion</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <div class="section-label">Strategy</div>
+  <h2>The <em>Big Idea</em></h2>
+  <p>The keyword data shows where people are already searching — Hunza, Skardu, Fairy Meadows, the great mountain treks. Auriga's content captures that traffic and converts it through a premium lens. Every piece positions Auriga as the agency that knows these places better than anyone.</p>
+
+  <div class="strategy-box">
+    <p>Rank for <strong>"Hunza trip"</strong> — sell <strong>"your private Hunza experience."</strong><br/>
+    People search generic terms. Auriga's content answers those searches with luxury framing, then converts via the enquiry form.</p>
+  </div>
+
+  <div class="funnel">
+    <div class="funnel-step">
+      <div>
+        <div class="funnel-step-label">Blog post ranks on Google</div>
+        <div class="funnel-step-sub">Targets high-volume, low-KD keywords</div>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step">
+      <div>
+        <div class="funnel-step-label">Reader lands on premium editorial content</div>
+        <div class="funnel-step-sub">Auriga voice, real photos, specific details</div>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step">
+      <div>
+        <div class="funnel-step-label">WhatsApp CTA or Enquiry Form</div>
+        <div class="funnel-step-sub">Every post ends with one clear action</div>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step">
+      <div>
+        <div class="funnel-step-label">Bespoke trip booked</div>
+        <div class="funnel-step-sub">Consultation → custom itinerary → booking</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-break" />
+
+  <div class="section-label">Priority 1</div>
+  <h2>Destination <em>Landing Pages</em></h2>
+  <p>These target the highest-volume searches. Written as editorial guides — confident, first-person, specific. Not listicles.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Post Title</th>
+        <th>Target Keyword</th>
+        <th>Vol</th>
+        <th>KD</th>
+        <th>Auriga Angle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>The Auriga Guide to Hunza</td>
+        <td>hunza tour packages</td>
+        <td class="vol">1,600</td>
+        <td class="kd-mid">30</td>
+        <td>"We've been curating Hunza since before it was on Instagram"</td>
+      </tr>
+      <tr>
+        <td>Skardu: Pakistan's Most Extraordinary Valley</td>
+        <td>skardu tour packages</td>
+        <td class="vol">1,000</td>
+        <td class="kd-mid">21</td>
+        <td>Private stays, off-season access</td>
+      </tr>
+      <tr>
+        <td>Fairy Meadows Without the Crowds</td>
+        <td>fairy meadows guide</td>
+        <td class="vol">18,100</td>
+        <td class="kd-low">low</td>
+        <td>Auriga handles the jeep, camp, porter — you just arrive</td>
+      </tr>
+      <tr>
+        <td>The Real Gilgit: A Local's Luxury Guide</td>
+        <td>gilgit things to do</td>
+        <td class="vol">140</td>
+        <td class="kd-low">14</td>
+        <td>Gilgit as a base for everything — only Auriga knows it like this</td>
+      </tr>
+      <tr>
+        <td>Ghizer Valley: Pakistan's Best Kept Secret</td>
+        <td>ghizer valley</td>
+        <td class="vol">720</td>
+        <td class="kd-mid">25</td>
+        <td>"We take 6 groups a year here. On purpose."</td>
+      </tr>
+      <tr>
+        <td>Chitral &amp; the Hindu Kush: An Expedition</td>
+        <td>chitral tours</td>
+        <td class="vol">70</td>
+        <td class="kd-low">4</td>
+        <td>High-price, low-competition destination</td>
+      </tr>
+      <tr>
+        <td>Astore Valley: The Journey That Changes You</td>
+        <td>astore valley</td>
+        <td class="vol">140</td>
+        <td class="kd-low">19</td>
+        <td>Remote luxury camping</td>
+      </tr>
+      <tr>
+        <td>Rakaposhi Basecamp: For Those Who Want More</td>
+        <td>rakaposhi base camp</td>
+        <td class="vol">720</td>
+        <td class="kd-mid">29</td>
+        <td>Trek + luxury rest camp combo</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <div class="section-label">Priority 2</div>
+  <h2>High-Volume <em>Quick Wins</em></h2>
+  <p>These rank fast, drive significant traffic, and funnel directly to enquiry. Many have near-zero competition despite large search volumes.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Post Title</th>
+        <th>Target Keyword</th>
+        <th>Vol</th>
+        <th>KD</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Best Time to Visit Hunza (A Luxury Traveller's Calendar)</td>
+        <td>best time to visit hunza</td>
+        <td class="vol">140</td>
+        <td class="kd-low">16</td>
+        <td>Month-by-month with seasonal packages</td>
+      </tr>
+      <tr>
+        <td>Hunza in Cherry Blossom Season</td>
+        <td>cherry blossom hunza</td>
+        <td class="vol">high</td>
+        <td class="kd-low">~2</td>
+        <td><span class="star">★</span> April spike — Pinterest/Instagram magnet</td>
+      </tr>
+      <tr>
+        <td>Stargazing in Gilgit-Baltistan</td>
+        <td>stargazing gb</td>
+        <td class="vol">growing</td>
+        <td class="kd-low">~1</td>
+        <td><span class="star">★</span> Zero competition, growing global niche</td>
+      </tr>
+      <tr>
+        <td>Eagle's Nest &amp; Duikar at Sunrise</td>
+        <td>eagle nest viewpoint hunza</td>
+        <td class="vol">880</td>
+        <td class="kd-mid">33</td>
+        <td>Photo-driven, highly emotional hook</td>
+      </tr>
+      <tr>
+        <td>Shangrila Resort vs. Staying Private in Skardu</td>
+        <td>shangrila resort skardu</td>
+        <td class="vol">8,100</td>
+        <td class="kd-high">40</td>
+        <td>Positions Auriga's curated stays above the resort</td>
+      </tr>
+      <tr>
+        <td>Passu Cones: The Most Photographed View in Pakistan</td>
+        <td>passu cones</td>
+        <td class="vol">high</td>
+        <td class="kd-low">~5</td>
+        <td><span class="star">★</span> Viral spot, no dedicated content exists</td>
+      </tr>
+      <tr>
+        <td>Deosai Plains: The Roof of the World</td>
+        <td>deosai plains</td>
+        <td class="vol">320</td>
+        <td class="kd-low">10</td>
+        <td>Glamping angle — Auriga's Deosai camp</td>
+      </tr>
+      <tr>
+        <td>Shandur Polo Festival: How to Experience It Properly</td>
+        <td>shandur polo festival</td>
+        <td class="vol">1,900</td>
+        <td class="kd-mid">20</td>
+        <td>Premium access framing</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="section-break" />
+
+  <div class="section-label">Priority 3</div>
+  <h2>Editorial <em>Brand Content</em></h2>
+  <p>These don't rank for search volume — they convert visitors into clients. Written once, shared repeatedly on Instagram and WhatsApp. These are the posts that make someone say <em>"this is who I want to book with."</em></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Post Title</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Why We Only Take 40 Groups a Year</td>
+        <td>Trust + scarcity — the Auriga philosophy explained</td>
+      </tr>
+      <tr>
+        <td>What Luxury Means at 4,000 Metres</td>
+        <td>Brand positioning — redefines "luxury" for Pakistan travel</td>
+      </tr>
+      <tr>
+        <td>7 Days in Hunza: An Auriga Itinerary</td>
+        <td>Sample itinerary — shows the bespoke detail clients get</td>
+      </tr>
+      <tr>
+        <td>14 Days Across Gilgit-Baltistan: The Full Circuit</td>
+        <td>Flagship long-form itinerary — highest-value conversion</td>
+      </tr>
+      <tr>
+        <td>The People Who Made Our Journeys</td>
+        <td>Story-driven profiles of Auriga's local guides</td>
+      </tr>
+      <tr>
+        <td>A Letter From Gilgit: Why We Started Auriga</td>
+        <td>Founder story — builds the emotional trust that converts</td>
+      </tr>
+      <tr>
+        <td>Our Favourite Sunrise in Pakistan (and How to See It)</td>
+        <td>Personal, emotional, highly shareable</td>
+      </tr>
+      <tr>
+        <td>What Our Clients Say They Didn't Expect</td>
+        <td>Testimonial-anchored social proof</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <div class="section-label">Priority 4 + 5</div>
+  <h2>Practical Guides &amp; <em>Trek Content</em></h2>
+  <p>Practical guides capture high-intent searchers — people planning a trip right now. Trek content attracts Auriga's highest-value clients: serious travellers willing to pay for expertise.</p>
+
+  <h3>Practical Travel Guides</h3>
+  <table>
+    <thead>
+      <tr><th>Post Title</th><th>Target Keyword</th><th>Vol</th><th>KD</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Islamabad to Hunza: Everything You Need to Know</td><td>islamabad to hunza</td><td class="vol">480</td><td class="kd-low">10</td></tr>
+      <tr><td>Lahore to Hunza: Routes, Timing, What to Expect</td><td>lahore to hunza</td><td class="vol">880</td><td class="kd-low">7</td></tr>
+      <tr><td>How to Get to Skardu (Flights vs. Road)</td><td>lahore to skardu</td><td class="vol">1,300</td><td class="kd-low">16</td></tr>
+      <tr><td>NOC &amp; Permits for GB: The Complete Guide</td><td>noc permits gb</td><td class="vol">high</td><td class="kd-low">~3</td></tr>
+      <tr><td>What to Pack for Gilgit-Baltistan</td><td>what to pack gb</td><td class="vol">high</td><td class="kd-low">~3</td></tr>
+      <tr><td>Karakoram Highway: A Drive Guide</td><td>karakoram highway</td><td class="vol">2,400</td><td class="kd-high">49</td></tr>
+      <tr><td>Gilgit-Baltistan in Winter: What's Actually Open</td><td>gb in winter</td><td class="vol">moderate</td><td class="kd-low">low</td></tr>
+      <tr><td>GB Food Guide: What to Eat and Where</td><td>gb food guide</td><td class="vol">260</td><td class="kd-mid">25</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Mountain &amp; Trek Content</h3>
+  <table>
+    <thead>
+      <tr><th>Post Title</th><th>Target Keyword</th><th>Vol</th><th>KD</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>K2 Base Camp: What It Takes and What We Arrange</td><td>k2 base camp trek</td><td class="vol">880</td><td class="kd-high">40</td></tr>
+      <tr><td>Nanga Parbat Base Camp: The Trek Auriga Does Differently</td><td>nanga parbat base camp</td><td class="vol">720</td><td class="kd-mid">21</td></tr>
+      <tr><td>Laila Peak Base Camp: The Trek That Stops You Cold</td><td>laila peak base camp</td><td class="vol">1,600</td><td class="kd-mid">26</td></tr>
+      <tr><td>Rush Lake Trek: The One Nobody Talks About</td><td>rush lake trek</td><td class="vol">390</td><td class="kd-low">low</td></tr>
+      <tr><td>Naltar Lakes: A Day Trek Worth the Drive</td><td>naltar lakes</td><td class="vol">moderate</td><td class="kd-low">~2</td></tr>
+      <tr><td>Gondogoro La: Pakistan's Greatest High Pass</td><td>gondogoro la</td><td class="vol">110</td><td class="kd-mid">23</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="section-break" />
+
+  <div class="section-label">Quick Wins</div>
+  <h2>Start <em>Here</em></h2>
+  <p>Five posts with near-zero competition. Publish these first — they rank quickly and prove the strategy.</p>
+
+  <div class="quick-win">
+    <div class="qw-num">01</div>
+    <div>
+      <div class="qw-title">Passu Cones: The Most Photographed View in Pakistan — KD ~5</div>
+      <div class="qw-desc">Iconic, viral location. Nobody has a proper dedicated guide. Zero competition despite massive Instagram presence.</div>
+    </div>
+  </div>
+  <div class="quick-win">
+    <div class="qw-num">02</div>
+    <div>
+      <div class="qw-title">Hunza in Cherry Blossom Season — KD ~2</div>
+      <div class="qw-desc">Massive April traffic spike every year. Pinterest and Instagram magnet. Almost no dedicated content exists.</div>
+    </div>
+  </div>
+  <div class="quick-win">
+    <div class="qw-num">03</div>
+    <div>
+      <div class="qw-title">Stargazing in Gilgit-Baltistan — KD ~1</div>
+      <div class="qw-desc">Growing global niche. GB has some of the darkest skies in South Asia. Literally zero local coverage.</div>
+    </div>
+  </div>
+  <div class="quick-win">
+    <div class="qw-num">04</div>
+    <div>
+      <div class="qw-title">Tours from Islamabad — KD 2</div>
+      <div class="qw-desc">The easiest ranking win identified in the entire 862-keyword dataset. Low competition, clear buyer intent.</div>
+    </div>
+  </div>
+  <div class="quick-win">
+    <div class="qw-num">05</div>
+    <div>
+      <div class="qw-title">Ghizer Valley Guide — KD 25 (but Auriga is based there)</div>
+      <div class="qw-desc">Local credibility beats domain authority here. Auriga's firsthand knowledge of Ghizer is a competitive moat.</div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="section-label">Publishing Schedule</div>
+  <h2>90-Day <em>Calendar</em></h2>
+  <p>One post per week. Priority 1 posts first to build destination authority, then quick wins, then brand content.</p>
+
+  <div class="calendar">
+    <div class="cal-header">Week</div>
+    <div class="cal-header">Post</div>
+    <div class="cal-header">Type</div>
+
+    <div class="cal-cell">1</div>
+    <div class="cal-cell">The Auriga Guide to Hunza</div>
+    <div class="cal-cell"><span class="badge badge-1">P1</span></div>
+
+    <div class="cal-cell">2</div>
+    <div class="cal-cell">Fairy Meadows Without the Crowds</div>
+    <div class="cal-cell"><span class="badge badge-1">P1</span></div>
+
+    <div class="cal-cell">3</div>
+    <div class="cal-cell">Best Time to Visit Hunza</div>
+    <div class="cal-cell"><span class="badge badge-2">P2</span></div>
+
+    <div class="cal-cell">4</div>
+    <div class="cal-cell">Hunza in Cherry Blossom Season</div>
+    <div class="cal-cell"><span class="badge badge-2">P2</span></div>
+
+    <div class="cal-cell">5</div>
+    <div class="cal-cell">Why We Only Take 40 Groups a Year</div>
+    <div class="cal-cell"><span class="badge badge-3">Brand</span></div>
+
+    <div class="cal-cell">6</div>
+    <div class="cal-cell">Skardu: Pakistan's Most Extraordinary Valley</div>
+    <div class="cal-cell"><span class="badge badge-1">P1</span></div>
+
+    <div class="cal-cell">7</div>
+    <div class="cal-cell">Shangrila Resort vs. Staying Private in Skardu</div>
+    <div class="cal-cell"><span class="badge badge-2">P2</span></div>
+
+    <div class="cal-cell">8</div>
+    <div class="cal-cell">7 Days in Hunza: An Auriga Itinerary</div>
+    <div class="cal-cell"><span class="badge badge-3">Brand</span></div>
+
+    <div class="cal-cell">9</div>
+    <div class="cal-cell">Islamabad to Hunza: Everything You Need to Know</div>
+    <div class="cal-cell"><span class="badge badge-4">P4</span></div>
+
+    <div class="cal-cell">10</div>
+    <div class="cal-cell">Passu Cones: The Most Photographed View in Pakistan</div>
+    <div class="cal-cell"><span class="badge badge-2">P2</span></div>
+
+    <div class="cal-cell">11</div>
+    <div class="cal-cell">Nanga Parbat Base Camp Trek</div>
+    <div class="cal-cell"><span class="badge badge-5">P5</span></div>
+
+    <div class="cal-cell">12</div>
+    <div class="cal-cell">A Letter From Gilgit: Why We Started Auriga</div>
+    <div class="cal-cell"><span class="badge badge-3">Brand</span></div>
+  </div>
+
+  <hr class="section-break" />
+
+  <div class="section-label">Voice &amp; Format</div>
+  <h2>How Every Post <em>Should Read</em></h2>
+
+  <p>Tone: confident, editorial, first-person. Write as someone who has <em>been there</em>, not someone who read about it.</p>
+
+  <div style="margin: 20px 0 32px;">
+    <div class="rule">
+      <div class="rule-icon">✓</div>
+      <div class="rule-text"><strong>Specific details.</strong> Names of actual stays, real experiences, exact viewpoints. Vague claims destroy trust.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">✓</div>
+      <div class="rule-text"><strong>Real photos.</strong> Only Auriga's own trip photography. Stock photos signal inauthenticity instantly.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">✓</div>
+      <div class="rule-text"><strong>One CTA per post.</strong> WhatsApp or enquiry form — not both, not buried. End every piece with it.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">✓</div>
+      <div class="rule-text"><strong>Client pull quotes.</strong> One real quote per destination post. Proof beats persuasion.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">✗</div>
+      <div class="rule-text"><strong>No generic listicles.</strong> "Top 10 things to do in Hunza" — this is what every competitor writes. Don't compete there.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">✗</div>
+      <div class="rule-text"><strong>No filler.</strong> Every paragraph should earn its place. If it doesn't inform or persuade, cut it.</div>
+    </div>
+  </div>
+
+  <p style="font-size: 8.5pt; color: #8a8a8a; margin-top: 48px; padding-top: 16px; border-top: 1px solid #e8e4dc;">
+    Source: LocalGB SEO Architecture · 862 keywords · Competitor analysis (apricottours.pk, natureadventureclub.pk) · May 2026<br/>
+    Prepared for Auriga Ventures · aurigaventure.com · Gilgit, Pakistan
+  </p>
+
+</div>
+</body>
+</html>
