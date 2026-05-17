@@ -1,13 +1,14 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, use } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTour, TOURS } from "@/lib/tours";
 
-export default function TourPage({ params }: { params: { slug: string } }) {
-  const tour = getTour(params.slug);
+export default function TourPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
+  const tour = getTour(slug);
   if (!tour) notFound();
 
   const heroRef     = useRef<HTMLElement>(null);
