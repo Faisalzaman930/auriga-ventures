@@ -16,11 +16,11 @@ export default function ToursPage() {
       {/* Nav */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#e8e4de] h-[72px] flex items-center px-6 lg:px-10">
         <div className="max-w-[1320px] mx-auto w-full flex items-center justify-between">
-          <Link href="/new-home" className="flex items-baseline gap-1">
+          <Link href="/" className="flex items-baseline gap-1">
             <span className="text-[22px] font-semibold text-[#111]" style={{ fontFamily:"var(--font-cormorant),Georgia,serif" }}>Auriga</span>
             <span className="text-[22px] font-light text-[#C8903A]" style={{ fontFamily:"var(--font-cormorant),Georgia,serif" }}>Ventures</span>
           </Link>
-          <Link href="/new-home#contact"
+          <Link href="/#contact"
             className="px-5 py-2.5 bg-[#111] text-white text-[11px] tracking-[0.12em] uppercase font-medium hover:bg-[#C8903A] transition-colors duration-300"
             style={{ fontFamily:"var(--font-inter),sans-serif" }}
           >Enquire Now</Link>
@@ -98,7 +98,7 @@ export default function ToursPage() {
       <div className="bg-[#111] py-20 px-6 text-center">
         <p className="text-[11px] tracking-[0.45em] uppercase text-[#C8903A] mb-5" style={{ fontFamily:"var(--font-inter),sans-serif" }}>Can't find what you're looking for?</p>
         <h2 className="text-[40px] md:text-[54px] font-light text-white mb-8" style={{ fontFamily:"var(--font-cormorant),Georgia,serif" }}>We'll build it from scratch.</h2>
-        <Link href="/new-home#contact"
+        <Link href="/#contact"
           className="inline-flex items-center gap-3 px-8 py-4 bg-[#C8903A] text-[#111] text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-[#e0a84a] transition-colors duration-300"
           style={{ fontFamily:"var(--font-inter),sans-serif" }}
         >Plan My Trip</Link>

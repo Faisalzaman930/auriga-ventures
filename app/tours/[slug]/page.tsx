@@ -25,13 +25,13 @@ export default function TourPage({ params }: { params: Promise<{ slug: string }>
       {/* ── NAV ── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e8e4de] h-[72px] flex items-center px-6 lg:px-10">
         <div className="max-w-[1320px] mx-auto w-full flex items-center justify-between">
-          <Link href="/new-home" className="flex items-baseline gap-1">
+          <Link href="/" className="flex items-baseline gap-1">
             <span className="text-[22px] font-semibold text-[#111]" style={{ fontFamily:"var(--font-cormorant),Georgia,serif" }}>Auriga</span>
             <span className="text-[22px] font-light text-[#C8903A]"  style={{ fontFamily:"var(--font-cormorant),Georgia,serif" }}>Ventures</span>
           </Link>
           <nav className="hidden md:flex items-center gap-7">
             <Link href="/tours" className="text-[11px] tracking-[0.12em] uppercase text-[#555] hover:text-[#111] transition-colors" style={{ fontFamily:"var(--font-inter),sans-serif" }}>All Trips</Link>
-            <Link href="/new-home#contact" className="text-[11px] tracking-[0.12em] uppercase text-[#555] hover:text-[#111] transition-colors" style={{ fontFamily:"var(--font-inter),sans-serif" }}>About</Link>
+            <Link href="/#contact" className="text-[11px] tracking-[0.12em] uppercase text-[#555] hover:text-[#111] transition-colors" style={{ fontFamily:"var(--font-inter),sans-serif" }}>About</Link>
           </nav>
           <Link href="#enquire"
             className="px-5 py-2.5 bg-[#111] text-white text-[11px] tracking-[0.12em] uppercase font-medium hover:bg-[#C8903A] transition-colors duration-300"
@@ -269,7 +269,7 @@ export default function TourPage({ params }: { params: Promise<{ slug: string }>
             <span className="text-[20px] font-light text-[#C8903A]"  style={{ fontFamily:"var(--font-cormorant),Georgia,serif" }}>Ventures</span>
           </div>
           <div className="flex gap-6">
-            {["All Trips","/tours","About","/new-home","Contact","/new-home#contact"].reduce<{l:string,h:string}[]>((acc,_,i,arr)=>i%2===0?[...acc,{l:arr[i],h:arr[i+1]}]:acc,[]).map(({l,h})=>(
+            {["All Trips","/tours","About","/","Contact","/#contact"].reduce<{l:string,h:string}[]>((acc,_,i,arr)=>i%2===0?[...acc,{l:arr[i],h:arr[i+1]}]:acc,[]).map(({l,h})=>(
               <Link key={l} href={h} className="text-[11px] tracking-[0.12em] uppercase text-white/30 hover:text-white/60 transition-colors" style={{ fontFamily:"var(--font-inter),sans-serif" }}>{l}</Link>
             ))}
           </div>
